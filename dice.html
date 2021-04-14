@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>React App</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div id="display" class="text-center">
+
+            <p>0</p>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary" onclick=refresh()>PUSH</button>
+        </div>
+    </div>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Load our React component. -->
+    <!-- <script src="like_button.js"></script> -->
+
+    <script>
+        let dom = document.getElementById('display');
+
+        let refresh = () => {
+            let num = Math.floor(Math.random() * 6) + 1;
+            let el = React.createElement(
+                'p', {}, num
+            )
+            ReactDOM.render(el, dom);
+        }
+
+          // let el = React.createElement(
+          //     'p', {}, 'Reactが動きました！'
+          // )
+          // ReactDOM.render(el, dom);
+
+    </script>
+    </div>
+</body>
+
+</html>
